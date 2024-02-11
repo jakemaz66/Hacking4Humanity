@@ -14,7 +14,8 @@ spacy = "^3.7.2"
 newsapi-python = "^0.2.7"
 pycountry = "^23.12.11"
 better-profanity = "^0.7.0"
-en_core_web_sm = {url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-3.7.1/en_core_web_lg-3.7.1.tar.gz"}
+en_core_web_sm = {url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1.tar.gz"}
+en-core-web-lg = {url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-3.7.1/en_core_web_lg-3.7.1.tar.gz"}
 
 
 
