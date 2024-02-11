@@ -75,8 +75,8 @@ news_chatbot("News Article")
 #Stray bit of hate speech floating online
 news_stories.append('Asian Americans Deserve Shit')
 
-#Censor Hate Speech Article in final output
 def print_news(news_stories=news_stories):
-   for news in news_stories:
-    print(profanity.censor(news))
+    censored_news_list = [profanity.censor(news) for news in news_stories]
+    censored_news = '\n'.join(censored_news_list)
+    return censored_news
 

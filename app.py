@@ -12,7 +12,9 @@ def index():
 
 @app.route('/get_news', methods=['POST'])
 def get_news():
+    print("Request received at /get_news")
     news_result = print_news()
+    print("news_result:", news_result)
     return jsonify({'censored_news': news_result})
 
 @app.route('/run_python_file', methods=['POST'])
