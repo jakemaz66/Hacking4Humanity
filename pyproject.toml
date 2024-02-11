@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "hacking4humanity"
+version = "0.1.0"
+description = "Repository for Hacking for Humanity 2024"
+authors = ["Jacob, Kayla, Sydney, Emilie"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+flask = "^3.0.2"
+pandas = "^2.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

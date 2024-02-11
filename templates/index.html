@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Hacking4Humanity 2024: Let's Stop Hate!</title>
+</head>
+<body>
+
+    <h1>Large Language Model Content Filter</h1>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 50px; 
+        }
+    </style>
+
+    <form id="myForm" action="#" method="post">
+        <label for="userInput">Hello! I am a news chatbot! Ask me about the current events.</label>
+        <input type="text" id="userInput" placeholder="Type here">
+        <style>
+            body {
+                text-align: center; 
+            }
+        </style>
+
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+
+    <img src= "C:\Users\jakem\Hacking4Humanity\templates\maxresdefault.jpg" width="1280" height="720" alt="me">
+
+    <script>
+        function submitForm() {
+            // Add your form submission logic here
+            var userInput = document.getElementById('userInput').value;
+            alert('Form submitted! User Input: ' + userInput);
+            // You can also use AJAX to submit the form data to the server.
+        }
+    </script>
+
+</body>
+</html>
