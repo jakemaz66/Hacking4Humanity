@@ -33,12 +33,20 @@
 
     <img src= "C:\Users\jakem\Hacking4Humanity\templates\maxresdefault.jpg" width="1280" height="720" alt="me">
 
+    <div id="newsOutput"></div>
+
     <script>
-        function submitForm() {
-            // Add your form submission logic here
+        async function submitForm() {
             var userInput = document.getElementById('userInput').value;
             alert('Form submitted! User Input: ' + userInput);
-            // You can also use AJAX to submit the form data to the server.
+            
+            // Call the Flask endpoint to get censored news
+            const response = await fetch('/get_news', { method: 'POST' });
+            const result = await response.json();
+
+            // Display the censored news result
+            var newsOutputDiv = document.getElementById('newsOutput');
+            newsOutputDiv.innerHTML = result.censored_news;
         }
     </script>
 
