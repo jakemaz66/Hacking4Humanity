@@ -6,6 +6,8 @@
     padding: 0;
 }
 
+
+ /* Specifying the formatting of the main web page */
 body {
     font-family: 'Times New Roman', Times, serif;
     background-color: #ffffff;
@@ -14,11 +16,12 @@ body {
     background-image: linear-gradient(135deg, #515151 0%, #474748 100%);
 }
 
+/* Setting up some formatting for input field box */
 .container {
     width: 80%;
     margin: 0 auto;
     padding: 30px;
-    background-color: #F5F5DC;
+    background-color: #000000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     display: flex;
@@ -26,17 +29,23 @@ body {
     align-items: center;
 }
 
+/* Setting font size for title text */
+title {
+    font-size: 128px;
+}
+
+
 h1 {
-    font-size: 32px;
+    font-size: 128px;
     margin-bottom: 20px;
 }
 
 input[type="text"] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
+    width: 75%;
+    padding: 24px 40px;
+    margin: 16px 0;
     box-sizing: border-box;
-    border: 2px solid #ccc;
+    border: 3px solid #ccc;
     border-radius: 4px;
     background-color: #f8f8f8;
     font-size: 14px;
@@ -81,4 +90,9 @@ h2 {
     font-size: 24px;
     margin-bottom: 10px;
     margin-top: 20px;
+}
+
+/* Defining large font size to make sure returned news stories are large enough */
+.large-font {
+    font-size: 36px; 
 }

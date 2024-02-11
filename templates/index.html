@@ -18,12 +18,13 @@
 <body>
 
     <form id="newsButton" action="#" method="post" onsubmit="event.preventDefault(); submitForm()">
-        <label for="userInput">Hello! I am a news chatbot! Ask me about the current events.</label>
+        <label for="userInput" style="font-size: 40px;" >Hello! I am a news chatbot! Ask me about the current events.</label>
         <input type="text" id="userInput" placeholder="Enter News Request Here Human">
         <button type="submit">Submit for News!!!</button>
     </form>
 
-    <img src= "Untitled design (57).png" width="250" height="250" alt="me">
+    
+    <img src="{{ url_for('static', filename='css/13-134737_artificial-intelligence-clipart-two-heads-are-better-than.png') }}" />
 
     <div id="newsOutput"></div>
 
@@ -39,7 +40,7 @@
 
             var newsOutputDiv = document.getElementById('newsOutput');
             // This returns the result in bulleted list style format
-            newsOutputDiv.innerHTML = '<ul>' + result.censored_news.split('\n').map(news => `<li>${news}</li>`).join('') + '</ul>';
+            newsOutputDiv.innerHTML = '<ul class="large-font">' + result.censored_news.split('\n').map(news => `<li>${news}</li>`).join('') + '</ul>';
         }
     </script>
 
