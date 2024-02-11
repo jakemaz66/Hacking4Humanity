@@ -4,25 +4,24 @@ from hackathon_chatbot import print_news
 import pandas
 import subprocess
 
+#Making flask object
 app = Flask(__name__)
 
+#Adding a route to load the html template
 @app.route('/')
 def index():
     return render_template('index.html')
 
+#Adding a route to get the news output from the hackathon_chatbot
 @app.route('/get_news', methods=['POST'])
 def get_news():
-    print("Request received at /get_news")
+
+    #Calling function from the hackathon_chatbot model
     news_result = print_news()
-    print("news_result:", news_result)
+
+    #Returning the news using the jsonify part of the flask library
     return jsonify({'censored_news': news_result})
 
-@app.route('/run_python_file', methods=['POST'])
-def run_python_file():
-    if request.method == 'POST':
-        # Replace 'your_script.py' with the name of your Python file
-        subprocess.run(['python', 'app.py'])
-        return 'Python file executed successfully!'
-
+#Running main app file
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
