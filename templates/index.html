@@ -1,3 +1,4 @@
+<!-- Specifying the normal HTML Parameters-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Hacking4Humanity 2024 Tech Track!</title>
+    
+    <!-- Adding some CSS Style specifications-->
     <style>
         body {
             text-align: center; 
@@ -17,31 +20,60 @@
 </head>
 <body>
 
+    <style>
+#newsButton label {
+        font-size: 42px; 
+        color: white;
+    }
+    </style>
+    
+    <!-- This is the form to for the user to submit their request-->
+    <!-- When the form is submitted, the submit() function (Defined Below) will be called-->
     <form id="newsButton" action="#" method="post" onsubmit="event.preventDefault(); submitForm()">
-        <label for="userInput" style="font-size: 40px;" >Hello! I am a news chatbot! Ask me about the current events.</label>
-        <input type="text" id="userInput" placeholder="Enter News Request Here Human">
+        <label for="userInput">Hello! I am a news chatbot! Ask me about the current events.</label>
+        <input type="text" id="userInput" placeholder="Enter News Request Here Human: ">
         <button type="submit">Submit for News!!!</button>
     </form>
 
-    
-    <img src="{{ url_for('static', filename='css/13-134737_artificial-intelligence-clipart-two-heads-are-better-than.png') }}" />
+    <!-- This is the path to the image-->
+    <img src="{{ url_for('static', filename='css/Untitled design (75).png') }}" />
 
     <div id="newsOutput"></div>
 
+    <!-- This is the javascript function that calls the API-->
     <script>
         async function submitForm() {
+
+            //This gets the user input put into the field and stores it in a variable userInput
             var userInput = document.getElementById('userInput').value;
-
-            alert('Fetching the News! You asked: ' + userInput);
             
-            // Call the Flask endpoint to get censored news
-            const response = await fetch('/get_news', { method: 'POST' });
-            const result = await response.json();
+            //This notifies the website user of their input
+            alert('Fetching the News! You asked: ' + userInput);
+    
+            //This calls the function in app.py that gets the news from the hackathon_chatbot function
+            const response = await fetch('/get_news', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ userInput: userInput }),
+            });
 
+            // This stores the result of response in a json variable called result
+            const result = await response.json();
+            
             var newsOutputDiv = document.getElementById('newsOutput');
-            // This returns the result in bulleted list style format
-            newsOutputDiv.innerHTML = '<ul class="large-font">' + result.censored_news.split('\n').map(news => `<li>${news}</li>`).join('') + '</ul>';
+
+            //This checks if the censored_news list defined in hackathon_chatbot is empty -> it will be empty if user
+            //Enters a non-news related request
+            if (result.censored_news && result.censored_news.trim() !== "") {
+            //Show news, specified to be shown in a bulleted list style format with a new article on a new line
+            newsOutputDiv.innerHTML = '<ul style="list-style-type: square; font-size: 40px; color: #FFFFFF;">' + '<p style="font-size: 60px; color: #3498db;">Censored News:</p>' + result.censored_news.split('\n').map(news => `<li>${news}</li>`).join('') + '</ul>';
+        }   else {
+            //Ask user to enter a real request
+            newsOutputDiv.innerHTML ='<p style="font-size: 60px; color: #FFFFFF;">Please Type a Valid News Request!</p>';
         }
+    }
     </script>
 
 </body>

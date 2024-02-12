@@ -10,8 +10,8 @@
  /* Specifying the formatting of the main web page */
 body {
     font-family: 'Times New Roman', Times, serif;
-    background-color: #ffffff;
-    color: #ffffff;
+    background-color: #000000;
+    color: #000000;
     line-height: 1.6;
     background-image: linear-gradient(135deg, #515151 0%, #474748 100%);
 }

@@ -16,8 +16,12 @@ def index():
 @app.route('/get_news', methods=['POST'])
 def get_news():
 
-    #Calling function from the hackathon_chatbot model
-    news_result = print_news()
+    #Getting the user input from the submitted form in the HTML file
+    data = request.get_json()
+    userInput = data.get('userInput')
+    
+    #Calling function from the hackathon_chatbot model with the input passed as the parameter
+    news_result = print_news(userInput)
 
     #Returning the news using the jsonify part of the flask library
     return jsonify({'censored_news': news_result})
