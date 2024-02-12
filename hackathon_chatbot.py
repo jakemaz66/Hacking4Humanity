@@ -28,7 +28,7 @@ def NewsStories():
       "source": "bbc-news",
       "sortBy": "top",
       #This is my custom API key from the News API
-      "apiKey": "4dbc17e007ab436fb66416009dfb59a8"
+      "apiKey": "67075ef3ef79476b8e41ed46055514f2"
     }
 
     #Specifying the news API URL
