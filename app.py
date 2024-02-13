@@ -1,8 +1,7 @@
 #Importing Libraries
 from flask import Flask, render_template, request, jsonify
 from hackathon_chatbot import print_news
-import pandas
-import subprocess
+
 
 #Making flask object
 app = Flask(__name__)
