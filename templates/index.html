@@ -1,4 +1,4 @@
-<!-- Specifying the normal HTML Parameters-->
+<!-- Specifying the normal HTML Parameters and the hacking4humanity title, as well as the location of the css file-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,6 +32,8 @@
     <form id="newsButton" action="#" method="post" onsubmit="event.preventDefault(); submitForm()">
         <label for="userInput">Hello! I am a news chatbot! Ask me about the current events.</label>
         <input type="text" id="userInput" placeholder="Enter News Request Here Human: " style="font-size: 50px;">
+
+        <!-- Text for the Button-->
         <button type="submit">Submit for News!!!</button>
     </form>
 
@@ -52,6 +54,7 @@
     
             //This calls the function in app.py that gets the news from the hackathon_chatbot function
             const response = await fetch('/get_news', {
+                //The function is a POST method
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

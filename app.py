@@ -15,7 +15,7 @@ def index():
 @app.route('/get_news', methods=['POST'])
 def get_news():
 
-    #Getting the user input from the submitted form in the HTML file
+    #Getting the user input from the submitted form in the HTML file using the requests library
     data = request.get_json()
     userInput = data.get('userInput')
     
