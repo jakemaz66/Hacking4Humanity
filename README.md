@@ -5,8 +5,8 @@ Welcome to Hacking4Humanity, a project for the 2024 Hacking4Humanity Hackathon t
 ## Table of Contents
 1. [Overview](#overview)
 2. [Features](#features)
-3. [SkillsNeeded](#skillsneeded)
-4. [ToolsUsed](#toolsused)
+3. [Skills Needed](#skills-needed)
+4. [Tools Used](#tools-used)
 
 
 ## Overview
